@@ -1,0 +1,108 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Hangman Game</h1>
+
+
+
+
+@if (String.IsNullOrEmpty(ViewData["PlayerName"].ToString()))
+{
+    <img src="~/images/wopr.jpg" />
+
+    <form asp-page-handler="StartGame" method="post">
+
+        <h2>Game Setup</h2>
+        <div class="form-group row">
+            <label for="playerName" class="col-sm-5 col-form-label-lg">
+               Your name: 
+            </label>
+            <div class="col-sm-7">
+                <input type="text" name="playerName" value="" class="form-control"/>
+            </div>
+        </div>
+         <div class="form-group row">
+            <label for="maxGuesses" class="col-sm-5 col-form-label-lg">
+               How many guesses do you need? 
+            </label>
+            <div class="col-sm-7">
+                <select name="maxGuesses" class="form-control">
+                    <option selected value="12">12 (Easy: I'm too young to die)</option>
+                    <option value="10">10 (Hey, not too rough)</option>
+                    <option value="8">8 (Hurt me plenty)</option>
+                    <option value="6">6 (Ultra-Hard)</option>
+                    <option value="4">4 (Nightmare!)</option>
+                </select>
+            </div>
+         </div>
+        <div class="row">
+            <div class="col-sm-5">
+                &nbsp;
+            </div>
+            <div class="col-sm-7">
+                <input type="submit" class="btn btn-primary" value="Play Hangman!" />
+            </div>
+        </div>
+    </form>
+
+}
+else
+{
+
+    <div class="alert alert-@ViewData["alertClass"]" role="alert">
+        <h2>@ViewData["Message"]</h2>
+    </div>
+    
+
+    <h3>@ViewData["MaskedWord"]</h3>
+
+    @if (Convert.ToInt16(ViewData["GuessesRemaining"])>0)
+    {
+        
+
+         @: <h3>Guess a letter:</h3>
+        <p> (you have only @ViewData["GuessesRemaining"] guesses left!)</p>
+         <form asp-page-handler="MakeGuess" method="post">
+        @foreach (char letter in Model.UnguessedLetters())
+        {
+            <input type="submit" class="btn btn-default" name="guessedLetter" value="@letter" /> 
+        }
+         </form>
+    }
+   
+     <h3>Guessed letters:</h3>
+     @foreach (char letter in Model.GuessedLetters())
+        {
+            <input type="button" class="btn btn-danger" value="@letter" /> 
+        }
+
+   
+    <hr />
+
+
+    <p>
+        <a class="btn btn-primary" href="/">Start Over</a>
+        </p>
+
+
+
+<hr />
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#cheat" aria-expanded="false" aria-controls="collapseExample">
+   Cheat
+  </button>
+
+<div class="collapse" id="cheat">
+  <div class="card card-body">
+        Secret word: @ViewData["SecretWord"]
+  </div>
+</div>
+}   
+
+
+
+
+
