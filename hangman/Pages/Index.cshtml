@@ -76,7 +76,15 @@ else
      <h3>Guessed letters:</h3>
      @foreach (char letter in Model.GuessedLetters())
         {
-            <input type="button" class="btn btn-danger" value="@letter" /> 
+         @if (ViewData["SecretWord"].ToString().ToUpper().IndexOf(letter.ToString().ToUpper())>=0)
+         {
+              <input type="button" class="btn btn-success" value="@letter" /> 
+         }
+         else
+         {
+              <input type="button" class="btn btn-danger" value="@letter" /> 
+         }
+
         }
 
    

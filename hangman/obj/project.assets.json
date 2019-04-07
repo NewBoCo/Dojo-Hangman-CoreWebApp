@@ -11796,23 +11796,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eric Engelmann\\.nuget\\packages\\": {},
+    "C:\\Users\\erice\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Personal OneDrive\\OneDrive\\Repos\\Dojo-Hangman-CoreWebApp\\hangman\\hangman\\hangman.csproj",
+      "projectUniqueName": "G:\\OneDrive\\Repos\\Dojo-Hangman-CoreWebApp\\hangman\\hangman.csproj",
       "projectName": "hangman",
-      "projectPath": "D:\\Personal OneDrive\\OneDrive\\Repos\\Dojo-Hangman-CoreWebApp\\hangman\\hangman\\hangman.csproj",
-      "packagesPath": "C:\\Users\\Eric Engelmann\\.nuget\\packages\\",
-      "outputPath": "D:\\Personal OneDrive\\OneDrive\\Repos\\Dojo-Hangman-CoreWebApp\\hangman\\hangman\\obj\\",
+      "projectPath": "G:\\OneDrive\\Repos\\Dojo-Hangman-CoreWebApp\\hangman\\hangman.csproj",
+      "packagesPath": "C:\\Users\\erice\\.nuget\\packages\\",
+      "outputPath": "G:\\OneDrive\\Repos\\Dojo-Hangman-CoreWebApp\\hangman\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Eric Engelmann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\erice\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
